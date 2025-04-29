@@ -10,13 +10,17 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="deadline" value="{{post.deadline}}">
+                <input type="data" id="deadline" name="deadline" value="{{ post.deadline }}" required>
             </td>
             <td>
-                <input type="text" name="body" value="{{post.body}}">
+                <input type="text" id="body" name="body" value="{{ post.body }}" required>
             </td>
             <td>
-                <input type="text" name="priority" value="{{post.priority}}">
+                <select id="priority" name="priority" required>
+                    <option value="低" {% if post.priority == "低" %}selected{% endif %}>低</option>
+                    <option value="中" {% if post.priority == "中" %}selected{% endif %}>中</option>
+                    <option value="高" {% if post.priority == "高" %}selected{% endif %}>高</option>
+                </select>
             </td>
         </tr>
     </table>
