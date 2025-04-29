@@ -15,12 +15,12 @@
             </tr>
             {% for tusk in tusk_list %}
                 <tr>
-                    <td>{{tusk.deadline}}</td>
-                    <td>{{tusk.body}}</td>
-                    <td>{{tusk.priority}}</td>
+                    <td>{{ tusk[1] }}</td>  {# deadline #}
+                    <td>{{ tusk[2] }}</td>  {# body #}
+                    <td>{{ tusk[3] }}</td>  {# priority #}
                     <td>
-                        <a href="/{{tusk.id}}/edit" role="button">編集</a>
-                        <a href="/{{tusk.id}}/delete" role="button">削除</a>
+                    <a href="/{{ tusk[0] }}/edit" role="button">編集</a>
+                    <a href="/{{ tusk[0] }}/delete" role="button">削除</a>
                     </td>
                 </tr>
             {% endfor %}
